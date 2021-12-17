@@ -1,0 +1,15 @@
+version: "2.4"
+
+services:
+  application:
+    container_name: node-express-app
+    build:
+      dockerfile: Dockerfile
+      context: ./server
+    environment:
+      HONEYCOMB_HOST_API:
+      HONEYCOMB_API_KEY:
+      HONEYCOMB_DATASET_NAME:
+      SERVICE_NAME: node-greeting-service
+    ports:
+      - "8080:8080"
