@@ -13,15 +13,15 @@ Then run the web app.
 ```bash
 cd server
 npm install
-HONEYCOMB_API_KEY=XXXXXX HONEYCOMB_DATASET_NAME=XXXXXXX npm start
+HONEYCOMB_API_KEY=XXXXXX npm start
 ```
 ### Using Docker
 
-`HONEYCOMB_API_KEY=XXXXXX HONEYCOMB_DATASET_NAME=XXXXXXX docker-compose -d`
+`HONEYCOMB_API_KEY=XXXXXX docker-compose -d`
 
 ### Using Tilt
 
-Run `HONEYCOMB_API_KEY=XXXXXX HONEYCOMB_DATASET_NAME=XXXXXXX tilt up`
+Run `HONEYCOMB_API_KEY=XXXXXX tilt up`
 
 ## 2. Accessing the Endpoint
 

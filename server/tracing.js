@@ -14,7 +14,7 @@ const { OTLPTraceExporter } = require("@opentelemetry/exporter-trace-otlp-grpc")
 
 const metadata = new Metadata()
 metadata.set('x-honeycomb-team', process.env.HONEYCOMB_API_KEY);
-metadata.set('x-honeycomb-dataset', process.env.HONEYCOMB_DATASET_NAME);
+metadata.set('x-honeycomb-dataset', 'otel-quickstart');
 
 // The Trace Exporter exports the data to Honeycomb by providing the metadata + url information
 
@@ -29,7 +29,7 @@ const traceExporter = new OTLPTraceExporter({
 
 const sdk = new NodeSDK({
   resource: new Resource({
-    [SemanticResourceAttributes.SERVICE_NAME]: process.env.SERVICE_NAME,
+    [SemanticResourceAttributes.SERVICE_NAME]: 'nodejs-greeting-app',
   }),
   traceExporter,
 // Instrumentations allow you to add auto-instrumentation packages
