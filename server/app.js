@@ -16,7 +16,7 @@
     var message = 'Hello There!';
     res.send(message);
 
-    // Uncomment lines 20-21 to see high cardinality data in Honeycomb
+    // Uncomment lines 20-21 to add high cardinality data in Honeycomb
     // span.setAttribute("message", message)
     // console.log(`Added the message variable: ${message}`);
     span.end();
