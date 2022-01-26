@@ -69,4 +69,4 @@ Using the message attribute allows you to see the message that is sent at the en
 
 ### 4. Exploring Your Data
 
-You’ve now sent data from this application. Continue the quickstart by `exploring your data` section of the application.
+You’ve now sent data from this application. Continue the quickstart by `exploring your data` section of the quickstart guide.
