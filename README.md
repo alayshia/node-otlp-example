@@ -19,6 +19,8 @@ To utilize the example, you'll need the following:
 
 ### 1. Run the Application
 
+Choose from the following options:
+
 #### NPM
 
 ```bash
@@ -48,7 +50,7 @@ Use one of following examples:
 # Hitting the Endpoint 100 Times
 for n in {1..100}; do curl localhost:8080; done
 
-```
+``` 
 
 ```bash
 # Hitting the Endpoint 200 Times and forcing an error in a continuous loop
