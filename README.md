@@ -51,19 +51,20 @@ HONEYCOMB_API_KEY=XXXXXX tilt up
 - Terminal: `curl localhost:8080`
 - Web: `http://localhost:8080`
 
-**Looking to add multiple events or error messages?**
+**Looking to add multiple events or error messages? Use one of following examples.**
 
-Use one of following examples:
+
+- Hitting the Endpoint 1000 times and forcing an error in a continuous loop
 
 ```bash
-# Hitting the Endpoint 100 Times
-for n in {1..100}; do curl localhost:8080; done
-
+while true; do for n in {1..1000}; do curl localhost:8080; done; curl -f localhost:8080/c; sleep 5; done
 ```
 
+- Hitting the Endpoint 1000 Times with a forced error
+
 ```bash
-# Hitting the Endpoint 200 Times and forcing an error in a continuous loop
-while true; do for n in {1..200}; do curl localhost:8080; done; curl -f localhost:8080/c; sleep 5; done
+for n in {1..1000}; do curl localhost:8080; done; curl -f localhost:8080/c;
+
 ```
 
 ### 3. Adding High Cardinality Data
