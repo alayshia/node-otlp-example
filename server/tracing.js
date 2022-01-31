@@ -37,8 +37,8 @@ const sdk = new NodeSDK({
 });
 
 sdk.start()
-  .then(() => console.log('Tracing initialized'))
-  .catch((error) => console.log('Error initializing tracing', error));
+  .then(() => console.log('Application is running. Send data to Honeycomb by hitting the endpoint.'))
+  .catch((error) => console.log('Error tracing cannot be initialized.', error));
 
 process.on('SIGTERM', () => {
   sdk.shutdown()
