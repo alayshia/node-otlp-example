@@ -17,9 +17,9 @@ To utilize the example, you'll need the following:
 
 ## Instructions
 
-### 1. Run the Application
+### 1. Run the Application using **one** of the following options:
 
-#### NPM
+- NPM
 
 ```bash
 cd server
@@ -27,13 +27,24 @@ npm install
 HONEYCOMB_API_KEY=XXXXXX npm start
 ```
 
-#### Docker
+<br/> **OR** <br/>
 
-`HONEYCOMB_API_KEY=XXXXXX docker-compose -d`
+- Docker
 
-#### Using Tilt
+```bash
+HONEYCOMB_API_KEY=XXXXXX docker-compose -d
+```
 
-Run `HONEYCOMB_API_KEY=XXXXXX tilt up`
+<br/> **OR** <br/>
+
+- Using Tilt
+
+```bash
+HONEYCOMB_API_KEY=XXXXXX tilt up
+```
+
+<br/>
+
 
 ### 2. Hit the endpoint using one of these commands
 
