@@ -1,0 +1,17 @@
+# prints show up in the Tiltfile log so you know what's been run
+print("hello my friends")
+
+docker_compose("./docker-compose.yml")
+
+local_resource(
+  'curl greeting',
+  cmd='curl -s localhost:7001/greeting',
+  trigger_mode=TRIGGER_MODE_MANUAL,
+  auto_init=False)
+
+
+local_resource(
+  'forcing an error',
+  cmd='for n in {1..1000}; do curl -s localhost:7001/greeting; done; curl -s localhost:7001/greeting1; curl -f localhost:7001/;',
+  trigger_mode=TRIGGER_MODE_MANUAL,
+  auto_init=False)

@@ -1,0 +1,45 @@
+version: "2.4"
+
+services:
+  frontend:
+    build: frontend
+    environment:
+      HONEYCOMB_LIVE_DEMO_KEY:
+      OTEL_EXPORTER_OTLP_ENDPOINT: "https://api.honeycomb.io"
+      OTEL_EXPORTER_OTLP_HEADERS: "x-honeycomb-team=${HONEYCOMB_LIVE_DEMO_KEY}"
+      NAME_ENDPOINT: "name:8000"
+      MESSAGE_ENDPOINT: "message:9000"
+      OTEL_SERVICE_NAME: "frontend-service"
+    ports:
+      - 7001:7001
+
+  message:
+    build: message-service
+    environment:
+      HONEYCOMB_LIVE_DEMO_KEY:
+      OTEL_EXPORTER_OTLP_ENDPOINT: "https://api.honeycomb.io"
+      OTEL_EXPORTER_OTLP_HEADERS: "x-honeycomb-team=${HONEYCOMB_LIVE_DEMO_KEY}"
+      OTEL_SERVICE_NAME: "message-service"
+    ports:
+      - 9000:9000
+
+  name:
+    build: name-service
+    environment:
+      HONEYCOMB_LIVE_DEMO_KEY:
+      OTEL_EXPORTER_OTLP_ENDPOINT: "https://api.honeycomb.io"
+      OTEL_EXPORTER_OTLP_HEADERS: "x-honeycomb-team=${HONEYCOMB_LIVE_DEMO_KEY}"
+      OTEL_SERVICE_NAME: "name-service"
+      YEAR_ENDPOINT: "year:6001"
+    ports:
+      - 8000:8000
+
+  year:
+    build: year-service
+    environment:
+      HONEYCOMB_LIVE_DEMO_KEY:
+      OTEL_EXPORTER_OTLP_ENDPOINT: "https://api.honeycomb.io"
+      OTEL_EXPORTER_OTLP_HEADERS: "x-honeycomb-team=${HONEYCOMB_LIVE_DEMO_KEY}"
+      OTEL_SERVICE_NAME: "year-service"
+    ports:
+      - 6001:6001
